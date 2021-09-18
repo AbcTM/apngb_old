@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 优化参数
 final class Optimization: NSObject, CommandArgumentable {
     
     var enablePalette = true

@@ -8,9 +8,10 @@
 
 import Cocoa
 
+/// 回放参数
 final class Playback: NSObject, CommandArgumentable {
     
-    var numberOfLoops = 0
+    @objc var numberOfLoops = 0
     var skipFirstFrame = false
     
     override func setNilValueForKey(_ key: String) {

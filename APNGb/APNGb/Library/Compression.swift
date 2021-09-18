@@ -8,13 +8,14 @@
 
 import Cocoa
 
+/// 压缩参数
 final class Compression: NSObject, CommandArgumentable {
     
-    var enableZlib = false
-    var enable7zip = true
-    var enableZopfli = false
-    var sevenZipIterations = 15
-    var zopfliIterations = 15
+    @objc var enableZlib = false
+    @objc var enable7zip = true
+    @objc var enableZopfli = false
+    @objc var sevenZipIterations = 15
+    @objc var zopfliIterations = 15
     
     override func setNilValueForKey(_ key: String) {
         
