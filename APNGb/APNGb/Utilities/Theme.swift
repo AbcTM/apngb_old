@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 主题颜色
 struct Theme {
     
     private static let workingPaneColor = NSColor(colorLiteralRed: 246 / 255,

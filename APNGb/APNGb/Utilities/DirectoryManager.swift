@@ -8,12 +8,14 @@
 
 import Cocoa
 
+/// 文件夹管理器
 class DirectoryManager {
     
     static let shared = DirectoryManager()
     
     private init() {}
     
+    /// 清理这个工作文件夹
     func cleanupWorkingDirectory(forCommandExecutable executable: CommandExecutable) {
         let directoryUrl = self.workingDirectoryUrl(forCommandExecutable: executable)
         
@@ -22,6 +24,7 @@ class DirectoryManager {
         }
     }
     
+    /// 移动文件夹
     func moveFiles(forCommandExecutable executable: CommandExecutable,
                    toPath destinationUrl: URL,
                    withNames fileNames: [String],
@@ -49,6 +52,7 @@ class DirectoryManager {
         }
     }
     
+    /// 拷贝文件夹到工作目录
     func copyFilesInWorkingDirectory(forCommandExecutable executable: CommandExecutable, atPaths sourceUrls: [URL], toPath destinationUrls: [URL]) {
         let bound = sourceUrls.count
         
@@ -58,11 +62,13 @@ class DirectoryManager {
         }
     }
     
+    /// 跟进文件名字创建url
     func createUrlForFile(withName name: String, forCommandExecutable executable: CommandExecutable) -> URL? {
         let workingDirectoryUrl = self.workingDirectoryUrl(forCommandExecutable: executable)
         return workingDirectoryUrl?.appendingPathComponent(name)
     }
     
+    /// 工作目录的url
     func workingDirectoryUrl(forCommandExecutable executable: CommandExecutable) -> URL? {
         let temporaryDirectoryUrl = NSURL(fileURLWithPath: NSTemporaryDirectory())
         let mainDirectoryUrl = temporaryDirectoryUrl.appendingPathComponent(Resource.Directory.main)
@@ -80,6 +86,7 @@ class DirectoryManager {
         return destinationDirectoryUrl
     }
     
+    /// 创建工作文件夹
     func createWorkingDirectory(forCommandExecutable executable: CommandExecutable) {
         let directoryUrl = self.workingDirectoryUrl(forCommandExecutable: executable)
         
@@ -92,7 +99,7 @@ class DirectoryManager {
                                                             withIntermediateDirectories: true,
                                                             attributes: nil)
                     #if DEBUG
-                        NSWorkspace.shared().open(directoryUrl)
+                        NSWorkspace.shared.open(directoryUrl)
                     #endif
                 } catch let error {
                     NSLog("\(#function): \(error)")
@@ -102,7 +109,7 @@ class DirectoryManager {
     }
     
     // MARK: Private
-    
+    /// 拷贝文件到目标路径
     private func copyFile(atPath sourcePath: URL, toPath destinationPath: URL) {
         
         do {

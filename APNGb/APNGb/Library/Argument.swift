@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// appng 执行的参数
 struct Argument {
     
     /// 设置循环次数

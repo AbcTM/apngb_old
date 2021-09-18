@@ -8,11 +8,13 @@
 
 import Cocoa
 
+/// 生成apng进程
 final class AssemblyProcess: ExecutableProcess {
-    
+    /// 默认生成图片的名字，值为：apngb-animated.png
     private let generatedAnimatedImageName = "apngb-animated.png"
     
-    override init(withCommand command: Command, andAdditionalData additionalData: Any? = nil) {
+    override init(withCommand command: Command,
+                  andAdditionalData additionalData: Any? = nil) {
         DirectoryManager.shared.createWorkingDirectory(forCommandExecutable: .assembly)
         let animatedImageNewUrl = DirectoryManager.shared.createUrlForFile(withName: generatedAnimatedImageName,
                                                                            forCommandExecutable: .assembly)

@@ -8,43 +8,45 @@
 
 import Cocoa
 
-/// Makes type to reset it's valuee to initial.
+/// 使类型将其值重置为初始值。
 protocol Reseatable {
     
     func reset()
 }
 
-/// Store UNIX executables names.
+/// 存储 UNIX 可执行文件名称。
 enum CommandExecutable: String {
     case none = ""
+    /// 生成apng
     case assembly = "apngasm"
+    /// 分解apng
     case disassembly = "apngdis"
 }
 
 protocol CommandExecutableProtocol {
     
-    /// Identifies command associated executable name.
+    /// 标识命令关联的可执行文件名称。
     ///
     /// - Returns: UNIX executable name.
     func commandExecutable() -> CommandExecutable
 }
 
-/// Specifies a set of methods used by command instance's client
-/// to get it's arguments or information about them.
+/// 指定命令实例的客户端使用的一组方法
+/// 获取有关它们的参数或信息。
 protocol CommandArgumentable {
     
-    /// Check if arguments have passed validation.
+    /// 检查参数是否已通过验证。
     ///
     /// - Returns: `true` if arguments passed validation, else returns `false`.
     func havePassedValidation() -> Bool
     
-    /// Provide command's arguments and additional data.
+    /// 提供命令的参数和附加数据。
     ///
     /// - Returns: Tuple containing a list of arguments and additional data instance.
     func commandArguments() -> ([String], Any?)
 }
 
-/// Describes a Terminal command.
+/// 描述终端命令。
 class Command: NSObject {
     
     var name: String

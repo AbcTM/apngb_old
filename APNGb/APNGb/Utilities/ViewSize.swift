@@ -8,7 +8,7 @@
 
 import Cocoa
 
-/// Keeps dimension values of all views from the application.
+/// 保留应用程序中所有视图的尺寸值。
 struct ViewSize {
     
     static let windowHeight: CGFloat = 475.0
@@ -18,7 +18,7 @@ struct ViewSize {
 
 extension ViewSize {
     
-    /// Store side bar view dimension properties.
+    /// 存储侧栏视图尺寸属性。
     struct SideBar {
         
         static let width: CGFloat = 50.0
@@ -27,7 +27,7 @@ extension ViewSize {
 
 extension ViewSize {
     
-    /// Store child container view dimension properties.
+    /// 存储子容器视图维度属性。
     struct ChildContainer {
         
         static let width: CGFloat = 425.0
@@ -36,7 +36,7 @@ extension ViewSize {
 
 extension ViewSize {
     
-    /// Store preferences view dimension properties.
+    /// 存储首选项视图维度属性。
     struct Preferences {
         
         static let width: CGFloat = 200.0

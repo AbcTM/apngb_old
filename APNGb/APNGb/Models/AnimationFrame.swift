@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 动画每一帧对象
 final class AnimationFrame {
     
     var delaySeconds = 1

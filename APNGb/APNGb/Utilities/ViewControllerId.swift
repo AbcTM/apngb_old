@@ -6,7 +6,7 @@
 //  Copyright © 2016 Godoroja Stefan. All rights reserved.
 //
 
-/// Maps identifiers for all view controllers from the application.
+/// 映射应用程序中所有视图控制器的标识符。
 ///
 /// - Assembly: AssemblyViewController identifier
 /// - Disassembly: DisassemblyViewController identifier

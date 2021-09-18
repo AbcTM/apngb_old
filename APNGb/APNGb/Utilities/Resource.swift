@@ -9,7 +9,7 @@
 import Cocoa
 
 struct Resource {
-    
+    /// 文字提示
     struct String {
         static let dropAnimatedImageHere = "Drop animated image here"
         static let dropFramesHere = "Drop frames here"
@@ -20,6 +20,7 @@ struct Resource {
         static let delay = "Delay"
     }
     
+    /// 文件名
     struct Directory {
         static let main = "APNGb"
         static let assembly = "Assembly"

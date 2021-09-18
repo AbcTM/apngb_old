@@ -8,4 +8,4 @@
 
 import Cocoa
 
-typealias VoidHandler = (()->())?
+typealias VoidHandler = (()->())
